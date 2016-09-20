@@ -1,37 +1,36 @@
+from numbers import Number
+
+from justbases import Radices
+from justbases import Radix
+
 symbol = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-def to_base_10(number, old_base):
-    result = 0
-    figures = str(number).lower()[::-1]
-    for index, elem in enumerate(figures):
-        if elem not in symbol:
-            raise Exception('Not valid number')
-        i = symbol.index(elem)
-        if i >= old_base:
-            raise Exception('Not valid number')
-        result += i * old_base**index
-    return str(result)
-
-def from_base_10(number, new_base):
-    result = ''
-    try:
-        number = int(number)
-    except:
-        raise Exception('Not valid number')
-    while number > 0:
-        remainder = number % new_base
-        result = symbol[remainder] + result
-        number = number/new_base
-    return result
+max_base = len(symbol)
 
 def cast(number, old_base, new_base):
-    if old_base==1 or new_base==1:
-        raise Exception('Not valid base')
-    if old_base != 10:
-        number = to_base_10(number, old_base)
-    if new_base != 10:
-        number = from_base_10(number, new_base)
-    return number
+
+    if old_base < 2 or new_base < 2:
+        raise Exception('Not a valid base')
+
+    if old_base > max_base or new_base > max_base:
+        raise Exception('Not a valid base')
+
+    if isinstance(number, int) and number >= 0:
+        (radix, _) = Radices.from_rational(number, new_base)
+    elif isinstance(number, str):
+        try:
+            digits = [symbol.index(f) for f in number.lower()]
+        except ValueError:
+            raise Exception("Not a valid natural number.")
+
+        if all(d == 0 for d in digits):
+            radix = Radix(0, [], [], [], old_base).in_base(new_base)
+        else:
+            radix = Radix(1, digits, [], [], old_base).in_base(new_base)
+    else:
+        raise Exception("Not a valid natural number.")
+
+    return "".join([symbol[x] for x in radix.integer_part]) or "0"
 
 
 class Converter:

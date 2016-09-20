@@ -27,5 +27,5 @@ classifiers=[
 ],
 keywords='radix numbers',
 packages=['anyradix'],
-install_requires=[],
+install_requires=['justbases>=0.12'],
 platforms=['Any'])
