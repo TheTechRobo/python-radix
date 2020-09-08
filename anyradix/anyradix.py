@@ -9,10 +9,10 @@ def numeral_to_number(number, old_base):
     result = 0
     for elem in number.lower():
         if elem not in symbol:
-            raise Exception('Not valid number.')
+            raise ValueError('Invalid number.')
         i = symbol.index(elem)
         if i >= old_base:
-            raise Exception('Not valid number.')
+            raise ValueError('Invalid number.')
         result = result * old_base + i
     return result
 
@@ -28,19 +28,18 @@ def number_to_numeral(number, new_base):
     return result
 
 def cast(number, old_base, new_base):
-<<<<<<< HEAD
     if new_base < 2 or new_base > max_base:
-        raise Exception('Not a valid base.')
+        raise ValueError('Invalid base.')
 
     if isinstance(number, str):
         if old_base < 2 or old_base > max_base:
-            raise Exception('Not a valid base.')
+            raise ValueError('Invalid base.')
         number = numeral_to_number(number, old_base)
     elif isinstance(number, int):
         if old_base is not None:
-            raise Exception('Second argument should be None.')
+            raise ValueError('Second argument should be None.')
     else:
-        raise Exception("Not a valid number.")
+        raise ValueError("Invalid number.")
 
     return number_to_numeral(number, new_base)
 
