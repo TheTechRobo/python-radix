@@ -1,6 +1,4 @@
-# python-radix
-
-Python-radix library
+python-radix library
 ====================
 
 The library contains tools for representing natural numbers in a given base,
@@ -13,13 +11,19 @@ Python-radix usage examples
 ---------------------------
 Python-radix has both procedural and object-oriented solutions.
 
-**Procedural way example**
+### Procedural way example
 
+<<<<<<< HEAD:README.rst
     # to convert numeral 4 in base 10 to base 2
 
     cast('4', 10, 2)
 
     >>'100'
+=======
+    # to convert number 4 from base 10 to base 2
+    >>> cast(4, 10, 2)
+    '100'
+>>>>>>> master:README.md
 
     # to convert the integer 4 to base 2
     cast(4, None, 2)
@@ -27,8 +31,9 @@ Python-radix has both procedural and object-oriented solutions.
     Note that since the first argument is a number, rather than a numeral,
     the second parameter is irrelevant, so None is used.
 
-**Object oriented way example**
+### Object oriented way example
 
+<<<<<<< HEAD:README.rst
     # create an object to find the base 2 representation of any natural number
 
     new = Converter(None, 2)
@@ -36,9 +41,16 @@ Python-radix has both procedural and object-oriented solutions.
     new.convert(4)
 
     >>'100'
+=======
+    # create an object to convert numbers from one base to another (here it converts from base 10 to base 2)
+    >>> new = Converter(10, 2)
+    >>> new.convert(4)
+    '100'
+>>>>>>> master:README.md
 
     # create an object to find the base 2 representation of any base 10 numeral
 
+<<<<<<< HEAD:README.rst
     new = Converter(10, 2)
 
     new.convert('4')
@@ -52,3 +64,8 @@ Python-radix has both procedural and object-oriented solutions.
     cast('a', 16, 10)
 
     >> '10'
+=======
+    >>> new = Converter(10, 2)
+    >>> new.convert('4')
+    '100'
+>>>>>>> master:README.md

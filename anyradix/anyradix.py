@@ -28,6 +28,7 @@ def number_to_numeral(number, new_base):
     return result
 
 def cast(number, old_base, new_base):
+<<<<<<< HEAD
     if new_base < 2 or new_base > max_base:
         raise Exception('Not a valid base.')
 
