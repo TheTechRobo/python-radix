@@ -18,10 +18,10 @@ Python-radix has both procedural and object-oriented solutions.
     '100'
 
     # to convert the integer 4 to base 2
-    cast(4, None, 2)
+    >>> cast(4, None, 2)
 
-    Note that since the first argument is a number, rather than a numeral,
-    the second parameter is irrelevant, so None is used.
+Note that since the first argument is a number, rather than a numeral,
+the second parameter is irrelevant, so None is used.
 
 ### Object oriented way example
 
