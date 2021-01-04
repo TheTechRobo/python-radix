@@ -13,17 +13,9 @@ Python-radix has both procedural and object-oriented solutions.
 
 ### Procedural way example
 
-<<<<<<< HEAD:README.rst
-    # to convert numeral 4 in base 10 to base 2
-
-    cast('4', 10, 2)
-
-    >>'100'
-=======
-    # to convert number 4 from base 10 to base 2
-    >>> cast(4, 10, 2)
+    # to convert numeral 4 from base 10 to base 2
+    >>> cast('4', 10, 2)
     '100'
->>>>>>> master:README.md
 
     # to convert the integer 4 to base 2
     cast(4, None, 2)
@@ -33,39 +25,23 @@ Python-radix has both procedural and object-oriented solutions.
 
 ### Object oriented way example
 
-<<<<<<< HEAD:README.rst
     # create an object to find the base 2 representation of any natural number
 
-    new = Converter(None, 2)
+    >>> new = Converter(None, 2)
 
-    new.convert(4)
-
-    >>'100'
-=======
-    # create an object to convert numbers from one base to another (here it converts from base 10 to base 2)
-    >>> new = Converter(10, 2)
     >>> new.convert(4)
     '100'
->>>>>>> master:README.md
 
     # create an object to find the base 2 representation of any base 10 numeral
 
-<<<<<<< HEAD:README.rst
-    new = Converter(10, 2)
+    >>> new = Converter(10, 2)
 
-    new.convert('4')
-
-    >>'100'
+    >>> new.convert('4')
+    '100'
 
 **Using characters as digits**
 
     # the digits 0 through 9 are succeeded by the lower case ASCII alphabet
 
-    cast('a', 16, 10)
-
-    >> '10'
-=======
-    >>> new = Converter(10, 2)
-    >>> new.convert('4')
-    '100'
->>>>>>> master:README.md
+    >>> cast('a', 16, 10)
+    '10'
