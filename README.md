@@ -24,16 +24,11 @@ Note that since the first argument is a number, rather than a numeral,
 the second parameter is irrelevant, so None is used.
 
 ### Object oriented way example
-
-    # create an object to find the base 2 representation of any natural number
-
+    >>> # create an object to find the base 2 representation of any natural number
     >>> new = Converter(None, 2)
-
     >>> new.convert(4)
     '100'
-
-    # create an object to find the base 2 representation of any base 10 numeral
-
+    >>> # create an object to find the base 2 representation of any base 10 numeral
     >>> new = Converter(10, 2)
 
     >>> new.convert('4')
@@ -42,6 +37,5 @@ the second parameter is irrelevant, so None is used.
 **Using characters as digits**
 
     # the digits 0 through 9 are succeeded by the lower case ASCII alphabet
-
     >>> cast('a', 16, 10)
     '10'
