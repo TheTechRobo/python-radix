@@ -23,7 +23,7 @@ classifiers=[
     'Programming Language :: Python :: 3',
     'Programming Language :: Python :: 3.4',
 ],
-keywords='radix numbers',
-packages=['anyradix'],
+keywords='radix numbers bases number systems base36',
+packages=['python_radix'],
 install_requires=[],
 platforms=['Any'])
